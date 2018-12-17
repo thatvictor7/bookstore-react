@@ -31,4 +31,20 @@
   }
 }
 
+.test {
+  background-color: rgb(73,160,181);
+  /* height: 90vh; */
+
+}
+
+.book {
+  height: 3em;
+  width: 1em;;
+}
+
+.nav {
+  position: fixed;
+  /* top: 0; */
+}
+
 

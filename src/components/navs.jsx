@@ -3,7 +3,7 @@ import { Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
 
 const Navs = () => {
     return(
-        <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light">
           <Navbar.Brand href="#home">gBookstore</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
