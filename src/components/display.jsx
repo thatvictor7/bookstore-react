@@ -1,13 +1,17 @@
 import React from "react";
-import { CardGroup,Card } from 'react-bootstrap';
 import Book from './book'
 
 const Dispaly = (props) => {
-  const { booklist } = props
+  const { booklist,addToCart } = props
     return (
       <div>
         {booklist.map(book => {
-          return <Book title={book.title}
+          return <Book addToCart={addToCart}
+                       bookSelect={book}
+                       id={book.id}
+                       author={book.author}
+                       title={book.title}
+                       price={book.price}
                        description={book.description}
                        subtitle={book.subtitle} />
         })}

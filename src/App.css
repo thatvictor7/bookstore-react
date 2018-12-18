@@ -32,19 +32,44 @@
 }
 
 .test {
-  background-color: rgb(73,160,181);
+  /* background-color: #cecece; */
+  border-left: #cecece solid 2px;
   /* height: 90vh; */
-
-}
-
-.book {
-  height: 3em;
-  width: 1em;;
+  /* position:  */
 }
 
 .nav {
-  position: fixed;
-  /* top: 0; */
+  position: static !important;
+  top: 0 !important;
+  background-color: black !important;
 }
 
+.cart {
+  margin-left: 10%;
+  /* color: rgb(73,160,181) !important; */
+}
 
+.cartdiv {
+  border-left: #282c34;
+}
+
+.colorfy {
+  color: rgb(45,125,246) !important;
+}
+
+.book-card {
+  /* height: 8em !important; */
+}
+
+.basket {
+  display: flex;
+  flex-direction: row
+}
+
+.items {
+  /* width: 70%; */
+}
+
+.price {
+  /* width: 30%; */
+}
