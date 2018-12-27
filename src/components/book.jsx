@@ -2,7 +2,7 @@ import React from "react";
 import { CardGroup,Card,Button } from 'react-bootstrap';
 
 const Book = (props) => {
-    const { title,subtitle,description,price,addToCart,bookSelect,author,id } = props
+    const { title,subtitle,description,price,addToCart,bookSelect,author,id,inCart } = props
     return(
         <CardGroup>
             <Card className="book-card">
@@ -14,7 +14,9 @@ const Book = (props) => {
               </Card.Body>
               <Card.Footer>
                 <small className="text-muted">Price: € {price}.00</small>
-                <Button onClick={(e) => addToCart(id)} value={bookSelect} className="cart" variant="primary" size="sm">Add to Cart</Button>
+                
+            {!inCart ? <Button onClick={(e) => addToCart(id, true)} value={bookSelect} className="cart" variant="primary" size="sm">Add to Cart</Button>: console.log('eyy')}
+                {inCart ? <Button onClick={(e) => addToCart(id,false)} value={bookSelect} className="cart" variant="primary" size="sm">Remove</Button> : console.log("not in cart")}
               </Card.Footer>
             </Card>
         </CardGroup>

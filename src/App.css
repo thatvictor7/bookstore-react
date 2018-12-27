@@ -2,63 +2,71 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  height: 101px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col-9 {
+   height: 150em;
 }
 
 .test {
-  /* background-color: #cecece; */
-  border-left: #cecece solid 2px;
-  /* height: 90vh; */
-  /* position:  */
+  border-left: #c9c5c5 solid 2px;
+  /* padding-right: 2em; */
 }
 
+.test1 {
+  padding-top: 4em;
+  position: fixed;
+    /* overflow-y:auto; */
+  /* box-sizing: border-box; */
+  /* padding-right: 2em; */
+}
+
+.list-group-item {
+  border: 0 !important;
+  /* width: 28px !important; */
+}
+
+.book-list{
+  padding-top: 3em;
+}
 .nav {
-  position: static !important;
+  position: fixed !important;
   top: 0 !important;
   background-color: black !important;
 }
 
+.dark {
+  background-color: black !important;
+}
+
 .cart {
-  margin-left: 10%;
+  margin-left: 1%;
   /* color: rgb(73,160,181) !important; */
 }
 
 .cartdiv {
-  border-left: #282c34;
+  border-left: #c9c5c5;
 }
 
 .colorfy {
   color: rgb(45,125,246) !important;
 }
 
-.book-card {
-  /* height: 8em !important; */
+.items {
+  border-bottom: 2px solid #c9c5c5;
+  /* padding-bottom: 1em; */
+}
+
+.submit {
+  /* padding-top: 2em; */
+  margin-top: 2em;
+}
+
+.display {
+  height: 20% !important;
+  overflow-y:auto;
 }
 
 .basket {
@@ -66,10 +74,11 @@
   flex-direction: row
 }
 
-.items {
-  /* width: 70%; */
+.top {
+  padding-bottom: 1px !important; 
 }
 
-.price {
-  /* width: 30%; */
+.bottom {
+  padding-top: 1px !important;
+  color: #817e7e !important;
 }

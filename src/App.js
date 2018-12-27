@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col,ProgressBar } from 'react-bootstrap'
 import Navs from './components/navs'
 import Display from './components/display'
 import Cart from './components/cart'
@@ -12,8 +12,7 @@ class App extends Component {
     books: []
   }
 
-  addToCart = async(id) => {
-    // console.log("180" + id)
+  addToCart = async(id,inCart) => {
     await fetch('http://localhost:8082/api/books/cart/add/' + id, {
       method: "PATCH",
       headers: {
@@ -21,17 +20,17 @@ class App extends Component {
           "Accept": "application/json"
     },
     body: JSON.stringify({
-      "book.inCart": true
+      ["book.inCart"]: inCart
     })
    })
    const updatedBook = this.state.books.map(book => {
         if (book.id === id) {
-          book["inCart"] = !book["inCart"]
+          book["inCart"] = inCart
         }
         return book
       })
       this.setState({ books: updatedBook})
-      // console.log(this.state)
+      console.log(this.state)
   }
 
   async componentDidMount() {
@@ -43,16 +42,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navs/>
+        <Navs books={this.state.books}/>
         <Row>
-          <Col xs={9}>
-            <Display addToCart={this.addToCart} booklist={this.state.books}/>
+          <Col xs={8}>
+            {this.state.books ? <Display addToCart={this.addToCart} booklist={this.state.books}/> : <ProgressBar animated now={45} />}
+            {/* <Display addToCart={this.addToCart} booklist={this.state.books}/> */}
           </Col>
-          <Col className='test'>Cart:
+          <Col className='test'>
             <Cart addedToCart={this.state.books}/>
-            <Button variant="primary" size="lg" block>
-              Place Your Order
-            </Button>
+            
           </Col>
         </Row>
       </div>

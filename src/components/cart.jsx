@@ -1,19 +1,27 @@
 import React from 'react'
-import { ListGroup } from 'react-bootstrap'
+import { ListGroup, Button } from 'react-bootstrap'
 
 const Cart = (props) => {
     const { addedToCart } = props
+    let total = 0
+    addedToCart.map(book => {
+        // return total += book.price
+        if(book.inCart) {
+            return total += book.price
+        }
+    })
     return (
-        <div>   
+        <div className='test1'>   
+            <h4>Cart:</h4>
             <ListGroup className="items">
-            {/* <div className="basket">
-                <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                <ListGroup.Item>8</ListGroup.Item>
-            </div> */}
                 {addedToCart.map(book => {
-                    return book["inCart"] ? <ListGroup.Item>{book.title}</ListGroup.Item> : console.log('not added')
+                    return book["inCart"] ? <div><ListGroup.Item className="top">{book.title.slice(0, 20) + "...   €" + book.price+".00"}</ListGroup.Item> <ListGroup.Item className="bottom">{book.author}</ListGroup.Item> </div> : console.log('not added')
                 })}
             </ListGroup>
+            <ListGroup.Item>Total:   € {total}.00</ListGroup.Item>
+            <Button className="submit" variant="primary" size="lg" block>
+                Place Your Order
+            </Button>
         </div>
     )
 }
