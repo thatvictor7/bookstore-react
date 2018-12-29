@@ -35,6 +35,7 @@ body {
   position: fixed !important;
   top: 0 !important;
   background-color: black !important;
+  color: aqua !important;
 }
 
 .dark {
@@ -81,4 +82,8 @@ body {
 .bottom {
   padding-top: 1px !important;
   color: #817e7e !important;
+}
+
+.mr-auto {
+  background-color: black !important;
 }
